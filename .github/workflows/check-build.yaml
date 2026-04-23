@@ -53,6 +53,7 @@ jobs:
             **/target/surefire-reports/**/*.xml
 
       - name: Build Docker image
+        if: github.ref == 'refs/heads/main'
         run: |
           ./.github/workflows/build-image.sh
         env:
